@@ -1,182 +1,137 @@
-# Multiplayer Game with React & Socket.IO
+# 🔍 Murder Mystery AI: The Case of the Infinite Killer
 
-A real-time multiplayer game built with React and Socket.IO, featuring Among Us-style room lobbies and multiplayer gameplay.
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![React](https://img.shields.io/badge/Frontend-React-61DAFB?logo=react)](https://reactjs.org/)
+[![Node.js](https://img.shields.io/badge/Backend-Node.js-339933?logo=node.js)](https://nodejs.org/)
+[![Socket.io](https://img.shields.io/badge/Networking-Socket.io-010101?logo=socket.io)](https://socket.io/)
+[![AI Powered](https://img.shields.io/badge/AI-Generated_Cases-blueviolet)](https://groq.com/)
 
-## Features
+A premium, real-time multiplayer murder mystery investigation game where **every session is unique**. Powered by advanced AI, the game generates dynamic cases, suspects, and motives on the fly, ensuring no two investigations are ever the same.
 
-- 🎮 **Room-based Multiplayer**: Create or join rooms with unique codes
-- 👥 **2-Player Support**: Play with a friend in the same room
-- 🚶 **Real-time Movement**: See other players move in real-time
-- 🗺️ **Collision Detection**: Navigate around obstacles on the map
-- 🎨 **Beautiful UI**: Modern gradient design with smooth animations
+---
 
-## Project Structure
+## ✨ Key Features
 
+- 🎭 **Dynamic AI Storytelling**: Every game starts with a freshly generated murder case—victim, location, weapon, and a complex web of suspects—all created by LLMs (Llama 3.3 / Gemini).
+- 💬 **Interactive AI Suspects**: Don't just look at stats—**chat with the suspects**. AI-powered NPCs remember your questions, have distinct personalities, and might slip up if you press them hard enough.
+- 🤝 **Real-time Multiplayer**: Team up with friends in private lobbies. See each other move, collect evidence together, and deliberate over who the killer is.
+- 🕵️‍♂️ **Investigation Mechanics**: 
+  - **Evidence Collection**: Find clues scattered around the map.
+  - **Shared Inventory**: Work as a team to piece together the truth.
+  - **Accusations**: You only have 2 chances to catch the killer—make them count.
+- 🔊 **Immersive Audio**: Integrated Text-to-Speech (ElevenLabs) brings suspect dialogues to life (configurable).
+- 🎨 **Modern Aesthetics**: Sleek gradient UI, smooth animations, and an intuitive canvas-based gameplay experience.
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **React.js**: Functional components with Hooks for state management.
+- **HTML5 Canvas**: High-performance real-time character movement and map rendering.
+- **Socket.io-client**: Low-latency bidirectional communication.
+- **Vite**: Ultra-fast build tool and dev server.
+
+### Backend
+- **Node.js & Express**: Robust server architecture.
+- **Socket.io**: Room management and real-time state synchronization.
+- **AI Integration**:
+  - **Groq/Llama 3.3**: High-speed inference for case generation and NPC dialogue.
+  - **Gemini (optional)**: Alternative intelligence for complex reasoning.
+- **ElevenLabs API**: Premium AI voices for suspect interactions.
+
+---
+
+## 🚀 Quick Start
+
+### ⚡ The Easy Way (Windows)
+We've included a PowerShell script to get everything running in one click:
+1. Ensure you have [Node.js](https://nodejs.org/) installed.
+2. Double-click `start.ps1` (or run it in PowerShell).
+3. The script will install dependencies and launch both the backend (Port 3001) and frontend (Port 5173).
+
+### 🛠️ Manual Setup
+
+#### 1. Configure Environment
+Create a `.env` file in the `backend/` directory:
+```env
+GROQ_API_KEY=your_key_here
+ELEVENLABS_API_KEY=your_key_here
+ELEVENLABS_VOICE_ID=...
 ```
-kajukatli/
+
+#### 2. Install & Run
+```bash
+# Start Backend
+cd backend
+npm install
+npm start
+
+# Start Frontend (New Terminal)
+cd frontend
+npm install
+npm run dev
+```
+
+---
+
+## 🎮 How to Play
+
+### 1. The Lobby
+- Create a room and share the **6-character code** with your fellow detectives.
+- Once everyone is in, the host clicks **"Start Game"**. 
+- 🤖 *At this moment, the AI is writing your unique mystery.*
+
+### 2. The Investigation
+- **Move**: Use `W`, `A`, `S`, `D` to navigate the map.
+- **Explore**: Visit different locations (Library, Study, Garden) to find suspects.
+- **Interrogate**: Click on a suspect to start a chat. Ask them about their alibi, their relationship to the victim, or what they know about others.
+- **Evidence**: Search for objects that contradict suspect stories.
+
+### 3. The Accusation
+- When you are confident, use the **Accuse** feature.
+- **Caution**: An incorrect accusation brings you closer to losing. Use your collective wits!
+
+---
+
+## 📂 Project Structure
+
+```text
+Murder-Mystery/
 ├── backend/
-│   ├── server.js          # Socket.IO server
+│   ├── server.js          # Core Game Logic & AI Integration
 │   └── package.json
 ├── frontend/
 │   ├── src/
 │   │   ├── components/
-│   │   │   ├── Lobby.jsx      # Room creation/joining
-│   │   │   ├── Lobby.css
-│   │   │   ├── Game.jsx       # Main game component
-│   │   │   └── Game.css
-│   │   ├── App.jsx
-│   │   ├── App.css
-│   │   ├── main.jsx
-│   │   └── index.css
+│   │   │   ├── Lobby.jsx      # Multiplayer Room Management
+│   │   │   └── Game.jsx       # Real-time Map & NPC Interaction
+│   │   └── App.jsx
 │   ├── public/
-│   │   ├── img/
-│   │   │   ├── kajukatli-map.png
-│   │   │   ├── kajukatli-map-foreground.png
-│   │   │   └── ninja.png
-│   │   └── data/
-│   │       └── collisions.js
-│   ├── package.json
-│   ├── vite.config.js
-│   └── index-react.html
+│   │   ├── img/               # Map & Sprite Assets
+│   │   └── data/              # Map Collision Data
+│   └── package.json
+├── start.ps1              # Automation Script
 └── README.md
 ```
 
-## Installation & Setup
+---
 
-### Backend Setup
+## 🔮 Future Roadmap
 
-1. Navigate to the backend directory:
-```bash
-cd backend
-```
+- [ ] **Expanded Maps**: Explore a full mansion or a cyberpunk city.
+- [ ] **Deep Memory**: NPCs with even longer-term memory of past investigations.
+- [ ] **Mobile Support**: Virtual joysticks for detective work on the go.
+- [ ] **Voice Input**: Talk to suspects directly using your microphone.
 
-2. Install dependencies:
-```bash
-npm install
-```
+---
 
-3. Start the server:
-```bash
-npm start
-```
+## 📜 License
 
-The server will run on `http://localhost:3001`
+Distributed under the MIT License. See `LICENSE` for more information.
 
-### Frontend Setup
+---
 
-1. Open a new terminal and navigate to the frontend directory:
-```bash
-cd frontend
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Start the development server:
-```bash
-npm run dev
-```
-
-The frontend will run on `http://localhost:5173`
-
-## How to Play
-
-### Creating a Room
-
-1. Open `http://localhost:5173` in your browser
-2. Click "Create Room"
-3. Enter your username
-4. You'll receive a unique 6-character room code
-5. Share this code with your friend
-
-### Joining a Room
-
-1. Open `http://localhost:5173` in another browser window/tab
-2. Click "Join Room"
-3. Enter your username
-4. Enter the room code from the host
-5. Click "Join Room"
-
-### Starting the Game
-
-1. Once both players are in the room, the host can click "Start Game"
-2. Both players will see the game map
-3. Use **W, A, S, D** keys to move your character
-4. You'll see your friend's character moving in real-time!
-
-## Game Controls
-
-- **W** - Move Up
-- **A** - Move Left
-- **S** - Move Down
-- **D** - Move Right
-
-## Technical Details
-
-### Backend (Socket.IO)
-
-The backend uses Socket.IO to handle:
-- Room creation and management
-- Player join/leave events
-- Real-time position synchronization
-- Game state management
-
-### Frontend (React + Vite)
-
-The frontend uses:
-- **React** for component-based UI
-- **Socket.IO Client** for real-time communication
-- **HTML Canvas** for game rendering
-- **Vite** for fast development and building
-
-### Key Features
-
-1. **Room Management**: Unique room codes, host controls, player limits
-2. **Real-time Sync**: Player positions updated 60 times per second
-3. **Collision Detection**: Prevents players from walking through walls
-4. **Sprite Animation**: Animated walking sprites in 4 directions
-5. **Username Display**: See player names above their characters
-
-## Troubleshooting
-
-### Server won't start
-- Make sure port 3001 is not in use
-- Check that all dependencies are installed (`npm install`)
-
-### Can't connect to server
-- Verify the backend is running on port 3001
-- Check the Socket.IO URL in `frontend/src/components/Lobby.jsx`
-
-### Images not loading
-- Ensure all image files are in `frontend/public/img/`
-- Check that `collisions.js` is in `frontend/public/data/`
-- Make sure file paths are correct
-
-### Players not syncing
-- Check browser console for errors
-- Verify both players are in the same room
-- Make sure the game has been started by the host
-
-## Future Enhancements
-
-- [ ] Support for more than 2 players
-- [ ] Chat system
-- [ ] Different character skins
-- [ ] Game objectives/tasks
-- [ ] Mobile support with touch controls
-- [ ] Sound effects and background music
-
-## Technologies Used
-
-- **React** 18.2
-- **Socket.IO** 4.7
-- **Express** 4.18
-- **Vite** 5.0
-- **HTML5 Canvas**
-
-## License
-
-MIT License - Feel free to use this project for learning and fun!
-# Murder-Mystery-9Hacks
+<p align="center">
+  Built with ❤️ for <strong>9Hacks</strong> 
+</p>
