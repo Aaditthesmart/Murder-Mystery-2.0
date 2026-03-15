@@ -13,7 +13,7 @@ A premium, real-time multiplayer murder mystery investigation game where **every
 ## ✨ Key Features
 
 - 🎭 **Dynamic AI Storytelling**: Every game starts with a freshly generated murder case—victim, location, weapon, and a complex web of suspects—all created by LLMs (Llama 3.3 / Gemini).
-- 💬 **Interactive AI Suspects**: Don't just look at stats—**chat with the suspects**. AI-powered NPCs remember your questions, have distinct personalities, and might slip up if you press them hard enough.
+- 💬 **Interactive AI Suspects**: Don't just look at stats—**chat with the suspects**. AI-powered NPCs remember your questions, have distinct personalities, and might slip up if you press them hard enough. Ask them any question you want not just from the questions which are provided in the chat(those questions are just for your help so that you can know what type of basic questions you can ask from the suspects)
 - 🤝 **Real-time Multiplayer**: Team up with friends in private lobbies. See each other move, collect evidence together, and deliberate over who the killer is.
 - 🕵️‍♂️ **Investigation Mechanics**: 
   - **Evidence Collection**: Find clues scattered around the map.
