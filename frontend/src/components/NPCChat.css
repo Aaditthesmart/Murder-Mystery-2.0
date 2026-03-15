@@ -1,0 +1,216 @@
+.npc-chat-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch;
+  z-index: 2000;
+  pointer-events: auto;
+}
+
+.npc-chat-container {
+  background: #111821;
+  width: 450px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+  border-left: 1px solid #1f2937;
+  animation: slideInRight 0.3s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.npc-chat-header {
+  padding: 30px;
+  background: #161e27;
+  border-bottom: 1px solid #1f2937;
+  position: relative;
+}
+
+.npc-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.npc-emoji {
+  font-size: 20px;
+}
+
+.npc-title-text {
+  font-family: 'Crimson Pro', serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.npc-status-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #6a7682;
+}
+
+.status-dot-green {
+  color: #39ff14;
+  font-size: 14px;
+}
+
+.close-btn-top {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: 1px solid #333;
+  color: #555;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.close-btn-top:hover {
+  color: #ff1744;
+  border-color: #ff1744;
+}
+
+.npc-chat-messages {
+  flex: 1;
+  padding: 40px 30px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.interrogation-intro {
+  margin-top: 50px;
+  text-align: center;
+  color: #4b5563;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.message {
+  max-width: 90%;
+  animation: messageFadeIn 0.3s ease-out;
+}
+
+@keyframes messageFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.message-sender {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.npc-message .message-sender { color: #39ff14; }
+.npc-message .message-sender::before { content: '●'; font-size: 8px; }
+
+.player-message .message-sender { color: #6a7682; }
+
+.message-content {
+  font-family: 'Crimson Pro', serif;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #e5e7eb;
+}
+
+.interrogation-queries {
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.interrogation-btn {
+  background: transparent;
+  border: 1px solid #1f2937;
+  color: #9ca3af;
+  padding: 14px 20px;
+  text-align: left;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.interrogation-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: #3b82f6;
+  color: #fff;
+}
+
+.npc-chat-input {
+  padding: 20px 30px;
+  display: flex;
+  gap: 12px;
+  background: #111821;
+}
+
+.npc-chat-input input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #1f2937;
+  color: #39ff14;
+  padding: 10px 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+}
+
+.npc-chat-input input:focus {
+  outline: none;
+  border-color: #39ff14;
+}
+
+.btn-send-interrogation {
+  background: transparent;
+  border: 1px solid #39ff14;
+  color: #39ff14;
+  padding: 0 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-send-interrogation:hover {
+  background: #39ff14;
+  color: #000;
+}
+
+.npc-chat-footer-hint {
+  text-align: center;
+  padding: 20px;
+  color: #374151;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
