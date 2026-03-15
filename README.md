@@ -6,7 +6,7 @@
 [![Socket.io](https://img.shields.io/badge/Networking-Socket.io-010101?logo=socket.io)](https://socket.io/)
 [![AI Powered](https://img.shields.io/badge/AI-Generated_Cases-blueviolet)](https://groq.com/)
 
-A premium, real-time multiplayer murder mystery investigation game where **every session is unique**. Powered by advanced AI, the game generates dynamic cases, suspects, and motives on the fly, ensuring no two investigations are ever the same. The game is deployed and accesible here- https://murder-mystery-9-hacks-jm1x.vercel.app/
+A premium, real-time multiplayer murder mystery investigation game where **every session is unique**. Powered by advanced AI, the game generates dynamic cases, suspects, and motives on the fly, ensuring no two investigations are ever the same. The game is deployed and accessible here- https://murder-mystery-9-hacks-jm1x.vercel.app/
 Play the Game and Enjoy!!❤️
 
 ---
