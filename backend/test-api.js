@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 
-const GEMINI_API_KEY = "AIzaSyC6T9PxTI9diV9hGINbx6E6S49CtRbBnmI";
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const GEMINI_API_ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/openai/chat/completions?key=${GEMINI_API_KEY}`;
 
 const JLLM_API_ENDPOINT = "https://janitorai.com/hackathon/completions";
